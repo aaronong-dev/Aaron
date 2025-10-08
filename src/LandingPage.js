@@ -1,6 +1,7 @@
-import './LandingPage.css';
+import React from 'react';
 
-function App(){
+
+function LandingPage(){
     return (
         <div>
             <h1> Welcome to My Personal Website</h1>
@@ -8,4 +9,4 @@ function App(){
     );
 }
 
-export default App;
+export default LandingPage;
