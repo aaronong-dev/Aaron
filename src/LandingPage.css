@@ -44,11 +44,25 @@
     min-height: 50vh;
 }
 
-.about h1{
+.about-header {
+    display: flex;
+    align-items: center;
     margin-bottom: 1rem;
+}
+
+.about h1{
+    margin: 0;
     font-size: 3rem;
     color: white;
     text-align: left;
+}
+
+.about-line{
+    border: none;
+    border-top: 1px solid rgb(187, 187, 187);
+    width: 300px;
+    margin-left: 2rem;
+    margin-top: 22px;
 }
 
 .about-content{ 
@@ -86,11 +100,26 @@
     padding-top: 50px;
 }
 
-.portfolio h1{
+
+.portfolio-header {
+    display: flex;
+    align-items: center;
     margin-bottom: 1rem;
+}
+
+.portfolio h1{
+    margin: 0;
     font-size: 3rem;
     color: white;
-    text-align: center;
+    text-align: left;
+}
+
+.portfolio .about-line{
+    border: none;
+    border-top: 1px solid rgb(187, 187, 187);
+    width: 300px;
+    margin-left: 2rem;
+    margin-top: 22px;
 }
 
 .portfolio-content{
