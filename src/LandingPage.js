@@ -41,10 +41,24 @@ function LandingPage() {
       <section className="about">
           <h1> about-me </h1>
         <div className="about-content">
+          <div className="about-text">
+          <p> Honestly, I’m still figuring it out. Right now, I’m focused on preparing for technical interviews, 
+            learning new languages and frameworks, and just becoming a better programmer overall. 
+            I recently picked up JavaScript, HTML, and CSS, and somehow managed to earn the trust of a 
+            doctor to build their website. Since then, I’ve had more opportunities to build sites for others.
+            That's when I realized I really enjoyed solving problems and helping people. 
+            </p>
 
-          <p> Hello</p>
+            <p> <strong>Note:</strong> I gave up CS the first time. But here we are. Give something another try. You never know
+              where it might take you. </p>
+          </div>
           <div className="about-image">
             <img src="/Pictures/AboutPicture.jpg" alt="Handome Young Man"></img></div>
+        </div>
+      </section>
+      <section className="portfolio">
+        <h1> portfolio</h1>
+        <div className="portfolio-content">
         </div>
       </section>
     </div>
