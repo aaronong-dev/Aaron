@@ -18,6 +18,12 @@
     line-height: 1.5;
 }
 
+.hero h2{
+    font-size: 25px;
+    padding: 0;
+    margin-top: 0px;
+}
+
 .Typewriter__cursor {
   color: rgb(51, 159, 216); /* your color */
   animation: none;
@@ -124,4 +130,58 @@
 
 .portfolio-content{
     display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.portfolio-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    color: white;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.portfolio-item h3 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    color: white;
+}
+
+.portfolio-item p {
+    font-size: 1rem;
+    margin: 0;
+    color: rgb(187, 187, 187);
+}
+
+.placeholder-box {
+  width: 24rem;
+  height: 200px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.placeholder-box span {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
 }

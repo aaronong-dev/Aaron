@@ -40,7 +40,7 @@ function LandingPage() {
       </section>
       <section className="about">
           <div className="about-header">
-            <h1> about-me </h1>
+            <h1> / about-me </h1>
             <div className="about-line"></div>
           </div>
         <div className="about-content">
@@ -54,6 +54,7 @@ function LandingPage() {
 
             <p> <strong>Note:</strong> I gave up CS the first time. But here we are. Give something another try. You never know
               where it might take you. </p>
+
           </div>
           <div className="about-image">
             <img src="/Pictures/AboutPicture.jpg" alt="Handome Young Man"></img></div>
@@ -61,10 +62,29 @@ function LandingPage() {
       </section>
       <section className="portfolio">
         <div className="portfolio-header">
-           <h1>portfolio</h1>
+           <h1>/ portfolio</h1>
            <div className="about-line"></div>
         </div>
         <div className="portfolio-content">
+          <div className="portfolio-item">
+            <img src="/Pictures/JKMedicalPage.png" alt="JK Medical Website" />
+            <h3>JK Medical Clinic</h3>
+            <p>September 2025</p>
+            <button>View Site</button>
+          </div>
+          <div className="portfolio-item">
+            <img src="/Pictures/GracePointPage.png" alt="Grace Point Website" />
+            <h3>GracePoint Urgent Care</h3>
+            <p>October 2025</p>
+            <button>View Site</button>
+          </div>
+           <div className="portfolio-item">
+            <div class="placeholder-box">
+              <span>?</span>
+              </div>
+            <h3>Maybe yours?</h3>
+            <button>Contact Me</button>
+          </div>
         </div>
       </section>
     </div>
