@@ -1,0 +1,32 @@
+.navbar{
+    display: flex;
+    color: rgb(234, 234, 234);
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 180px;
+}
+
+.nav-links, .social-links{
+    font-size: 20px;
+    display: flex;
+    list-style: none;
+    font-weight: 200;
+}
+
+
+.social-links{
+    justify-content:right;
+    margin-left: auto;
+    margin-right: 200px;
+    gap: 15px;
+}
+
+.nav-links{
+    gap: 20px;
+}
+
+.nav-title{
+    font-size: 20px;
+    font-weight: 700;
+
+}
