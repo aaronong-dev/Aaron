@@ -63,7 +63,7 @@
     text-align: left;
 }
 
-.about-line{
+.header-line{
     border: none;
     border-top: 1px solid rgb(187, 187, 187);
     width: 300px;
@@ -120,7 +120,7 @@
     text-align: left;
 }
 
-.portfolio .about-line{
+.portfolio .header-line{
     border: none;
     border-top: 1px solid rgb(187, 187, 187);
     width: 300px;
@@ -129,6 +129,7 @@
 }
 
 .portfolio-content{
+    padding-top: 2rem;
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
@@ -166,7 +167,7 @@
 
 .portfolio-item p {
     font-size: 1rem;
-    margin: 0;
+    margin: 0.5rem;
     color: rgb(187, 187, 187);
 }
 
@@ -184,4 +185,39 @@
   color: white;
   font-size: 3rem;
   font-weight: bold;
+}
+
+
+.projects{
+    margin: auto;
+    max-width: 1100px;
+    min-height: 50vh;
+    padding-top: 50px;
+}
+
+.projects-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.projects h1{
+    margin: 0;
+    font-size: 3rem;
+    color: white;
+    text-align: left;
+}
+
+.projects .header-line{
+    border: none;
+    border-top: 1px solid rgb(187, 187, 187);
+    width: 300px;
+    margin-left: 2rem;
+    margin-top: 22px;
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    background: blue;
 }

@@ -3,6 +3,8 @@ import Navbar from './Components/Navbar';
 import './LandingPage.css';
 import Typewriter from "typewriter-effect";
 import { FaArrowDown } from 'react-icons/fa';
+import FinderShape from './Components/FinderShape';
+import './Components/FinderShape.css';
 
 
 
@@ -16,13 +18,19 @@ function LandingPage() {
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
-                  .typeString("If you're seeing this")
+                  .typeString("If you're seeing this,")
+                  .pauseFor(1000)
+                  .deleteAll()
+                  .typeString("I probably gave you my card.")
+                  .pauseFor(1000)
+                  .deleteAll()
+                  .typeString("If not,")
                   .pauseFor(1000)
                   .deleteAll()
                   .typeString("Welcome!")
                   .pauseFor(1000)
                   .deleteAll()
-                  .typeString("I'm Aaron")
+                  .typeString("I'm Aaron.")
                   .start();
               }}
               options={{
@@ -41,19 +49,17 @@ function LandingPage() {
       <section className="about">
           <div className="about-header">
             <h1> / about-me </h1>
-            <div className="about-line"></div>
+            <div className="header-line"></div>
           </div>
         <div className="about-content">
           <div className="about-text">
-          <p> Honestly, I’m still figuring it out. But right now, I’m focused on preparing for technical interviews, 
-            learning new languages and frameworks, and just becoming a better programmer overall. 
+          <p> I'm learning as I go, but right now, I'm focused on sharpening my technical skills, grinding leetcode,
+            and preparing for software engineering interviews.
             I recently picked up JavaScript, HTML, and CSS, and somehow managed to earn the trust of a 
             doctor to build their website. Since then, I’ve had more opportunities to build sites for others.
             That's when I realized I really enjoyed solving problems and helping people. The sites can be found below in the portfolio section.
             </p>
 
-            <p> <strong>Note:</strong> I gave up CS the first time. But here we are. Give something another try. You never know
-              where it might take you. </p>
 
           </div>
           <div className="about-image">
@@ -63,7 +69,7 @@ function LandingPage() {
       <section className="portfolio">
         <div className="portfolio-header">
            <h1>/ portfolio</h1>
-           <div className="about-line"></div>
+           <div className="header-line"></div>
         </div>
         <div className="portfolio-content">
           <div className="portfolio-item">
@@ -86,6 +92,17 @@ function LandingPage() {
             <button>Contact Me</button>
           </div>
         </div>
+      </section>
+      <section className="projects">
+        <div className="projects-header">
+            <h1>/ projects</h1>
+            <div className="header-line"></div>
+        </div>
+        <div className="projects-content">
+          <FinderShape/>
+
+        </div>
+
       </section>
     </div>
   );

@@ -13,6 +13,7 @@ function Navbar(){
                 <li>Home</li>
                 <li>About</li>
                 <li>Portfolio</li>
+                <li>Projects</li>
                 <li>Progression</li>
             </ul>
             <ul className="social-links">

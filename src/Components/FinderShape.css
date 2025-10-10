@@ -1,0 +1,30 @@
+.finder-shape{
+    width: 1100px;
+    height: 550px;
+    padding: 0px;
+    background: rgb(65, 65, 66);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    margin: 100px auto;
+    clip-path: inset(0 0 0 0%);
+}
+
+.finder-sidebar{
+    width: 1100px;
+    height: 550px;
+    padding: 0px;
+    background: rgb(81, 81, 81);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    margin: 100px auto;
+    clip-path: inset(0 80% 0 0);
+}
+
+.blackline{
+    height: 650px;
+    width: 1100px;
+    color: black;
+    z-index: 4;
+}
+
+

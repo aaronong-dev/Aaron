@@ -8,6 +8,7 @@
     top: 0;
     overflow: hidden;
     background-color: rgb(23, 42, 69);
+    z-index: 4;
 }
 
 .nav-links, .social-links{
