@@ -84,6 +84,12 @@ function LandingPage() {
             <p>October 2025</p>
             <button>View Site</button>
           </div>
+          <div className="portfolio-item">
+            <img src="/Pictures/ThePlaySage.png" alt="ThePlaySage Website" />
+            <h3>ThePlaySage</h3>
+            <p>November 2025</p>
+            <button>View Site</button>
+          </div>
            <div className="portfolio-item">
             <div class="placeholder-box">
               <span>?</span>
@@ -100,7 +106,6 @@ function LandingPage() {
         </div>
         <div className="projects-content">
           <FinderShape/>
-
         </div>
 
       </section>

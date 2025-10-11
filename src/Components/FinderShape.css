@@ -1,30 +1,84 @@
 .finder-shape{
+    position: relative;
+    display: flex;
     width: 1100px;
     height: 550px;
     padding: 0px;
-    background: rgb(65, 65, 66);
+    background: rgb(40, 41, 46);
     border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
     margin: 100px auto;
     clip-path: inset(0 0 0 0%);
 }
 
 .finder-sidebar{
-    width: 1100px;
-    height: 550px;
-    padding: 0px;
-    background: rgb(81, 81, 81);
+    width: 225px;
+    height: 100%;
+    background: rgba(44, 43, 43, 0.4);
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-    margin: 100px auto;
-    clip-path: inset(0 80% 0 0);
+    clip-path: inset(0 5% 0 0);
+    opacity: 0.9;
 }
+
+.finder-sidebar h1{
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    color:rgb(169, 169, 169);
+    margin-top: 2.5rem;
+    margin-right: 25px;
+}
+
+.sidebar-buttons{
+    padding-right: 35px;
+    list-style: none;
+}
+
+.sidebar-buttons ul{
+    list-style: none;
+    gap: 10px;
+}
+
+.sidebar-buttons h1{
+    padding-right: 40px;
+}
+
+.projects-folder{
+    display: flex;
+    padding-top: 0px;
+    justify-content: center;
+}
+
+.projects-folder ul{
+    list-style: none;
+    color: white;
+
+}
+
+.projects-folder li{
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
 
 .blackline{
-    height: 650px;
-    width: 1100px;
-    color: black;
-    z-index: 4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 214px;
+    width: 1.5px;
+    background-color: black;
 }
 
+.top-bar{
+    position: absolute;
+    background-color: rgb(81, 81, 81);
+    border-radius: 12px;
+    width: 100%;
+    height: 85px;
+    clip-path: inset(0 0 10% 19.6%);
+    opacity: 0.5;
+}
 
