@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 import { FaArrowDown } from 'react-icons/fa';
 import FinderShape from './Components/FinderShape';
 import './Components/FinderShape.css';
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import CustomScrollbar from "./Components/CustomScrollbar";
 
 
@@ -14,6 +14,8 @@ import CustomScrollbar from "./Components/CustomScrollbar";
 function LandingPage() {
 
   const scrollRef = useRef(null);
+  const [selectedFolder, setSelectedFolder] = useState(null);
+
   const projects = [
   {id: "Project 1", image: "/Icons/folder-icon-macos.webp"},
   {id: "Project 2", image: "/Icons/folder-icon-macos.webp"},
@@ -25,6 +27,14 @@ function LandingPage() {
   {id: "Project 8", image: "/Icons/folder-icon-macos.webp"},
 
 ];
+
+  const handleFolderClick = (project) => {
+    setSelectedFolder(project);
+  };
+
+  const handleCloseFolder = () => {
+    setSelectedFolder(null);
+  };
 
   return (
     <div>
@@ -125,13 +135,30 @@ function LandingPage() {
           <FinderShape/>
           <div className="finder-scroll" ref={scrollRef}>
             {projects.map((project, index) => (
-              <div className="folder-item" key={index}>
+              <div 
+                className={`folder-item ${selectedFolder?.id === project.id ? 'selected' : ''}`}
+                key={index}
+                onClick={() => handleFolderClick(project)}
+              >
                 <img src={project.image} alt={project.name} />
                 <span>{project.name}</span>
               </div>
             ))}
           </div>
           <CustomScrollbar scrollRef={scrollRef} />
+
+          {/* Enlarged Folder Modal */}
+          {selectedFolder && (
+            <div className="folder-modal-overlay" onClick={handleCloseFolder}>
+              <div 
+                className="folder-modal-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img src={selectedFolder.image} alt={selectedFolder.id} />
+                <span>{selectedFolder.id}</span>
+              </div>
+            </div>
+          )}
         </div>
 
       </section>
