@@ -3,8 +3,9 @@ import { FaRegFolderClosed } from 'react-icons/fa6';
 import { FaRegClock } from 'react-icons/fa';
 import { PiAppStoreLogo } from 'react-icons/pi';
 import { MdOutlineDownloadForOffline } from 'react-icons/md';
-import { AiFillCloseCircle } from 'react-icons/ai';
-import { FaMinusCircle } from 'react-icons/fa';
+import { FaCircle } from 'react-icons/fa';
+import { FaChevronLeft } from 'react-icons/fa';
+import { FaChevronRight } from 'react-icons/fa';
 
 function FinderShape(){
     return (
@@ -12,8 +13,9 @@ function FinderShape(){
             <div className="finder-sidebar">
                 <div className="sidebar-buttons">
                 <ul style={{display: "flex"}}>
-                    <li><AiFillCloseCircle style={{color: "red", height: "auto", width: "25px"}}></AiFillCloseCircle></li>
-                    <li><FaMinusCircle style={{color: "yellow", height: "auto", width: "22px"}}></FaMinusCircle></li>
+                    <li><FaCircle style={{color: "red", height: "auto", width: "19px",  marginLeft: "-15px"}}></FaCircle></li>
+                    <li><FaCircle style={{color: "yellow", height: "auto", width: "19px"}}></FaCircle></li>
+                    <li><FaCircle style={{color: "green", height: "auto", width: "19px"}}></FaCircle></li>
                 </ul>
                 <h1>Favorites</h1>
                  <div className="projects-folder">
@@ -28,7 +30,17 @@ function FinderShape(){
                 </div>
             </div>
             <div className="blackline"></div>
-            <div className="top-bar"></div>
+            <div className="top-bar">
+                <div className="arrows-title">
+                <FaChevronLeft style={{color: "white", height: "auto", width: "15px", marginRight: "20px", opacity: "0.5", marginBottom: "5px"}}></FaChevronLeft>
+                <FaChevronRight style={{color: "white", height: "auto", width: "15px", marginLeft: "20px", opacity: "0.5", marginBottom: "5px"}}></FaChevronRight>
+                <h1 style={{marginLeft: "25px"}}> Projects </h1>
+                </div>
+                <div className="top-bar-icons">
+                <img src="./Pictures/FinderTopBar.png" alt="Finder Top Bar"></img>
+                </div>
+
+            </div>
 
 
         </div>

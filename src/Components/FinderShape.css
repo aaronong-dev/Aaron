@@ -37,11 +37,15 @@
 .sidebar-buttons ul{
     list-style: none;
     gap: 10px;
+    
 }
+
+
 
 .sidebar-buttons h1{
     padding-right: 40px;
 }
+
 
 .projects-folder{
     display: flex;
@@ -73,12 +77,34 @@
 }
 
 .top-bar{
+    display: flex;
     position: absolute;
-    background-color: rgb(81, 81, 81);
+    background-color: rgb(55, 55, 55);
     border-radius: 12px;
     width: 100%;
-    height: 85px;
+    height: 70px;
     clip-path: inset(0 0 10% 19.6%);
     opacity: 0.5;
 }
 
+.arrows-title{
+    display: flex;
+    padding-left: 300px;
+    transform: translateX(-50px);
+}
+
+.arrows-title h1{
+    font-size: 20px;   
+    padding-top: 20px;
+
+    
+}
+
+.top-bar-icons img{
+    width: 570px;
+    height: auto;
+    transform: translateX(40px);
+    padding-top: 17px;
+    z-index: 1;
+    
+}
