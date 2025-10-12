@@ -5,10 +5,27 @@ import Typewriter from "typewriter-effect";
 import { FaArrowDown } from 'react-icons/fa';
 import FinderShape from './Components/FinderShape';
 import './Components/FinderShape.css';
+import { useRef } from "react";
+import CustomScrollbar from "./Components/CustomScrollbar";
+
 
 
 
 function LandingPage() {
+
+  const scrollRef = useRef(null);
+  const projects = [
+  {id: "Project 1", image: "/Icons/folder-icon-macos.webp"},
+  {id: "Project 2", image: "/Icons/folder-icon-macos.webp"},
+  {id: "Project 3", image: "/Icons/folder-icon-macos.webp"},
+  {id: "Project 4", image: "/Icons/folder-icon-macos.webp"},
+  {id: "Project 5", image: "/Icons/folder-icon-macos.webp"},
+  {id: "Project 6", image: "/Icons/folder-icon-macos.webp"},
+  {id: "Project 7", image: "/Icons/folder-icon-macos.webp"},
+  {id: "Project 8", image: "/Icons/folder-icon-macos.webp"},
+
+];
+
   return (
     <div>
       <Navbar />
@@ -106,6 +123,15 @@ function LandingPage() {
         </div>
         <div className="projects-content">
           <FinderShape/>
+          <div className="finder-scroll" ref={scrollRef}>
+            {projects.map((project, index) => (
+              <div className="folder-item" key={index}>
+                <img src={project.image} alt={project.name} />
+                <span>{project.name}</span>
+              </div>
+            ))}
+          </div>
+          <CustomScrollbar scrollRef={scrollRef} />
         </div>
 
       </section>

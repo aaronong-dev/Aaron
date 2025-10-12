@@ -13,9 +13,9 @@ function FinderShape(){
             <div className="finder-sidebar">
                 <div className="sidebar-buttons">
                 <ul style={{display: "flex"}}>
-                    <li><FaCircle style={{color: "red", height: "auto", width: "19px",  marginLeft: "-15px"}}></FaCircle></li>
-                    <li><FaCircle style={{color: "yellow", height: "auto", width: "19px"}}></FaCircle></li>
-                    <li><FaCircle style={{color: "green", height: "auto", width: "19px"}}></FaCircle></li>
+                    <li><FaCircle style={{color: "red", height: "auto", width: "19px",  marginLeft: "-15px", opacity: "0.9"}}></FaCircle></li>
+                    <li><FaCircle style={{color: "yellow", height: "auto", width: "19px", opacity: "0.9"}}></FaCircle></li>
+                    <li><FaCircle style={{color: "green", height: "auto", width: "19px", opacity: "0.9"}}></FaCircle></li>
                 </ul>
                 <h1>Favorites</h1>
                  <div className="projects-folder">
@@ -24,7 +24,10 @@ function FinderShape(){
                     <li><FaRegClock style={{color: "#2176d8ff", marginRight: "10px" }}/>Recents</li>
                     <li><PiAppStoreLogo style={{color: "#2176d8ff", marginRight: "10px" }}/>Applications</li>
                     <li><MdOutlineDownloadForOffline style={{color: "#2176d8ff", marginRight: "10px" }}/>Downloads</li>
-                    <li><FaRegFolderClosed style={{color: "#2176d8ff", marginRight: "10px" }}/>Projects</li>
+                    <li className="projects-item">
+                        <FaRegFolderClosed style={{color: "#2176d8ff", marginRight: "10px"}}/>
+                        Projects
+                    </li>
                 </ul>
                 </div>
                 </div>
