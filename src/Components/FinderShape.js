@@ -33,6 +33,7 @@ function FinderShape(){
                 </div>
             </div>
             <div className="blackline"></div>
+            <div className="blackline2"></div>
             <div className="top-bar">
                 <div className="arrows-title">
                 <FaChevronLeft style={{color: "white", height: "auto", width: "15px", marginRight: "20px", opacity: "0.5", marginBottom: "5px"}}></FaChevronLeft>

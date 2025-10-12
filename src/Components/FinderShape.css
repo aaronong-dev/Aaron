@@ -94,6 +94,16 @@
     background-color: black;
 }
 
+.blackline2{
+    position: absolute;
+    top: 63px;
+    bottom: 0;
+    height: 490px;
+    left: 692.5px;
+    width: 1.5px;
+    background-color: black;
+}
+
 .top-bar{
     display: flex;
     position: absolute;
