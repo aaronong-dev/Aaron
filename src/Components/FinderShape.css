@@ -128,10 +128,14 @@
     
 }
 
+.top-bar-icons{
+    position: absolute;
+    right: 20px;
+}
+
 .top-bar-icons img{
     width: 570px;
     height: auto;
-    transform: translateX(40px);
     padding-top: 17px;
     z-index: 1;
     

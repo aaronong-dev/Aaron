@@ -17,7 +17,7 @@ function LandingPage() {
   const [selectedFolder, setSelectedFolder] = useState(null);
 
   const projects = [
-  {id: "Project 1", image: "/Icons/folder-icon-macos.webp"},
+  {id: "Lane Manager", image: "/Icons/folder-icon-macos.webp", description: "This is a description of the project Test test  a description of the project  a description of the project  "},
   {id: "Project 2", image: "/Icons/folder-icon-macos.webp"},
   {id: "Project 3", image: "/Icons/folder-icon-macos.webp"},
   {id: "Project 4", image: "/Icons/folder-icon-macos.webp"},
@@ -103,26 +103,26 @@ function LandingPage() {
             <img src="/Pictures/JKMedicalPage.png" alt="JK Medical Website" />
             <h3>JK Medical Clinic</h3>
             <p>September 2025</p>
-            <button>View Site</button>
+            <a href="https://www.jkmedicalclinic.com/" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
           </div>
           <div className="portfolio-item">
             <img src="/Pictures/GracePointPage.png" alt="Grace Point Website" />
             <h3>GracePoint Urgent Care</h3>
             <p>October 2025</p>
-            <button>View Site</button>
+            <a href="https://your-gracepoint-url.com" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
           </div>
           <div className="portfolio-item">
             <img src="/Pictures/ThePlaySage.png" alt="ThePlaySage Website" />
             <h3>ThePlaySage</h3>
             <p>November 2025</p>
-            <button>View Site</button>
+            <a href="https://theplaysage.com" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
           </div>
            <div className="portfolio-item">
             <div class="placeholder-box">
               <span>?</span>
               </div>
             <h3>Maybe yours?</h3>
-            <button>Contact Me</button>
+            <a href="mailto:your-email@example.com" className="view-site-link">Contact Me</a>
           </div>
         </div>
       </section>
@@ -157,6 +157,18 @@ function LandingPage() {
                 <img src={selectedFolder.image} alt={selectedFolder.id} />
                 <span>{selectedFolder.id}</span>
               </div>
+              <div className="folder-modal-information">
+                <div className="folder-modal-information-header">
+                <img src={selectedFolder.image} alt={selectedFolder.id} />
+                <h1 style={{marginBottom: "10px"}}>{selectedFolder.id}</h1>
+                </div>
+             
+              </div>
+              <div className="folder-modal-information-content">
+              <h2> Information </h2>
+              <p>{selectedFolder.description}</p>
+              </div>
+
             </div>
           )}
         </div>
