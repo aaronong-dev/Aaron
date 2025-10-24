@@ -15,25 +15,119 @@ function LandingPage() {
 
   const scrollRef = useRef(null);
   const [selectedFolder, setSelectedFolder] = useState(null);
+  const [currentPath, setCurrentPath] = useState([]);
+  const [clickTimeout, setClickTimeout] = useState(null);
 
-  const projects = [
-  {id: "Lane Manager", image: "/Icons/folder-icon-macos.webp", description: "This is a description of the project Test test  a description of the project  a description of the project  "},
-  {id: "Project 2", image: "/Icons/folder-icon-macos.webp"},
-  {id: "Project 3", image: "/Icons/folder-icon-macos.webp"},
-  {id: "Project 4", image: "/Icons/folder-icon-macos.webp"},
-  {id: "Project 5", image: "/Icons/folder-icon-macos.webp"},
-  {id: "Project 6", image: "/Icons/folder-icon-macos.webp"},
-  {id: "Project 7", image: "/Icons/folder-icon-macos.webp"},
-  {id: "Project 8", image: "/Icons/folder-icon-macos.webp"},
+  // Folder structure with nested contents
+  const projectsData = {
+    id: "Projects",
+    type: "folder",
+    children: [
+      {
+        id: "Lane Manager",
+        type: "folder",
+        image: "/Icons/folder-icon-macos.webp",
+        description: "A bowling tournament management platform for tournament directors to manage their tournaments.",
+        children: [
+          {id: "LaneManager.Pro", type: "file", image: "/Icons/folder-icon-macos.webp"},
+          {id: "src", type: "folder", image: "/Icons/folder-icon-macos.webp", children: []},
+          {id: "package.json", type: "file", image: "/Icons/folder-icon-macos.webp"},
+          {id: "config.js", type: "file", image: "/Icons/folder-icon-macos.webp"},
+        ]
+      },
+      {
+        id: "Project 2",
+        type: "folder",
+        image: "/Icons/folder-icon-macos.webp",
+        description: "Full-stack e-commerce application with React and Node.js",
+        children: [
+          {id: "frontend", type: "folder", image: "/Icons/folder-icon-macos.webp", children: []},
+          {id: "backend", type: "folder", image: "/Icons/folder-icon-macos.webp", children: []},
+          {id: "README.md", type: "file", image: "/Icons/folder-icon-macos.webp"},
+          {id: "package.json", type: "file", image: "/Icons/folder-icon-macos.webp"},
+        ]
+      },
+      {
+        id: "Project 3",
+        type: "folder",
+        image: "/Icons/folder-icon-macos.webp",
+        description: "Personal portfolio website built with React",
+        children: [
+          {id: "index.html", type: "file", image: "/Icons/folder-icon-macos.webp"},
+          {id: "styles.css", type: "file", image: "/Icons/folder-icon-macos.webp"},
+          {id: "script.js", type: "file", image: "/Icons/folder-icon-macos.webp"},
+          {id: "images", type: "folder", image: "/Icons/folder-icon-macos.webp", children: []},
+        ]
+      },
+      {
+        id: "Project 4",
+        type: "folder",
+        image: "/Icons/folder-icon-macos.webp",
+        description: "2D mobile game developed with Unity",
+        children: [
+          {id: "Assets", type: "folder", image: "/Icons/folder-icon-macos.webp", children: []},
+          {id: "Scripts", type: "folder", image: "/Icons/folder-icon-macos.webp", children: []},
+          {id: "Scenes", type: "folder", image: "/Icons/folder-icon-macos.webp", children: []},
+          {id: "README.md", type: "file", image: "/Icons/folder-icon-macos.webp"},
+        ]
+      },
+    ]
+  };
 
-];
+  // Get current folder contents based on path
+  const getCurrentFolderContents = () => {
+    let current = projectsData;
+    for (let folderName of currentPath) {
+      current = current.children.find(item => item.id === folderName);
+      if (!current) return [];
+    }
+    return current.children || [];
+  };
 
-  const handleFolderClick = (project) => {
-    setSelectedFolder(project);
+  // Get current folder name
+  const getCurrentFolderName = () => {
+    if (currentPath.length === 0) return "Projects";
+    return currentPath[currentPath.length - 1];
+  };
+
+  const handleFolderClick = (item) => {
+    setSelectedFolder(item);
+  };
+
+  const handleFolderDoubleClick = (item) => {
+    if (item.type === "folder") {
+      setCurrentPath([...currentPath, item.id]);
+      setSelectedFolder(null);
+    }
+  };
+
+  const handleItemClick = (item) => {
+    // Clear existing timeout if any
+    if (clickTimeout) {
+      clearTimeout(clickTimeout);
+      setClickTimeout(null);
+      // Double click detected
+      handleFolderDoubleClick(item);
+    } else {
+      // Single click - provide immediate visual feedback
+      handleFolderClick(item);
+      // Set timeout for double-click detection
+      const timeout = setTimeout(() => {
+        setClickTimeout(null);
+      }, 250);
+      setClickTimeout(timeout);
+    }
   };
 
   const handleCloseFolder = () => {
     setSelectedFolder(null);
+  };
+
+  const handleBackNavigation = () => {
+    if (currentPath.length > 0) {
+      setCurrentPath(currentPath.slice(0, -1));
+      setSelectedFolder(null);
+    }
   };
 
   return (
@@ -132,20 +226,24 @@ function LandingPage() {
             <div className="header-line"></div>
         </div>
         <div className="projects-content">
-          <FinderShape/>
+          <FinderShape 
+            currentFolderName={getCurrentFolderName()} 
+            onBackClick={handleBackNavigation}
+            canGoBack={currentPath.length > 0}
+          />
           <div className="finder-scroll" ref={scrollRef}>
-            {projects.map((project, index) => (
+            {getCurrentFolderContents().map((item, index) => (
               <div 
-                className={`folder-item ${selectedFolder?.id === project.id ? 'selected' : ''}`}
+                className={`folder-item ${selectedFolder?.id === item.id ? 'selected' : ''}`}
                 key={index}
-                onClick={() => handleFolderClick(project)}
+                onClick={() => handleItemClick(item)}
               >
-                <img src={project.image} alt={project.name} />
-                <span>{project.name}</span>
+                <img src={item.image} alt={item.id} />
+                <span>{item.id}</span>
               </div>
             ))}
           </div>
-          <CustomScrollbar scrollRef={scrollRef} />
+          <CustomScrollbar scrollRef={scrollRef} contentKey={currentPath.join('/')} />
 
           {/* Enlarged Folder Modal */}
           {selectedFolder && (

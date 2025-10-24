@@ -1,27 +1,54 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import "./CustomScrollbar.css";
 
-function CustomScrollbar({ scrollRef }) {
+function CustomScrollbar({ scrollRef, contentKey }) {
   const trackRef = useRef(null);
   const [thumbLeft, setThumbLeft] = useState(0);
   const isDraggingRef = useRef(false);
   const dragOffsetRef = useRef(0);
   const thumbWidthPercent = 20; // Must match CSS thumb width
 
-  // Update thumb when content scrolls
+  // Update thumb when content scrolls or changes
   useEffect(() => {
     if (!scrollRef?.current) return;
     const el = scrollRef.current;
+    
+    // Reset scroll position to start when content changes
+    el.scrollLeft = 0;
+    
     const handleScroll = () => {
-      const ratio = el.scrollLeft / (el.scrollWidth - el.clientWidth);
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      if (maxScroll <= 0) {
+        setThumbLeft(0);
+        return;
+      }
+      const ratio = el.scrollLeft / maxScroll;
       // Account for thumb width so it doesn't overflow the track
       setThumbLeft(ratio * (100 - thumbWidthPercent));
     };
-    // Initialize thumb position
+    
+    // Initialize thumb position immediately
     handleScroll();
+    
+    // Also update after a short delay to ensure DOM has fully rendered
+    const timeoutId = setTimeout(() => {
+      handleScroll();
+    }, 50);
+    
     el.addEventListener("scroll", handleScroll);
-    return () => el.removeEventListener("scroll", handleScroll);
-  }, [scrollRef]);
+    
+    // Use ResizeObserver to handle dynamic content changes
+    const resizeObserver = new ResizeObserver(() => {
+      handleScroll();
+    });
+    resizeObserver.observe(el);
+    
+    return () => {
+      el.removeEventListener("scroll", handleScroll);
+      resizeObserver.disconnect();
+      clearTimeout(timeoutId);
+    };
+  }, [scrollRef, contentKey]);
 
   // Handle thumb dragging
   const handleMouseMove = useCallback((e) => {

@@ -7,7 +7,7 @@ import { FaCircle } from 'react-icons/fa';
 import { FaChevronLeft } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
 
-function FinderShape(){
+function FinderShape({ currentFolderName, onBackClick, canGoBack }){
     return (
         <div className="finder-shape">
             <div className="finder-sidebar">
@@ -36,9 +36,21 @@ function FinderShape(){
             <div className="blackline2"></div>
             <div className="top-bar">
                 <div className="arrows-title">
-                <FaChevronLeft style={{color: "white", height: "auto", width: "15px", marginRight: "20px", opacity: "0.5", marginBottom: "5px"}}></FaChevronLeft>
+                <FaChevronLeft 
+                  onClick={onBackClick}
+                  style={{
+                    color: "white", 
+                    height: "auto", 
+                    width: "15px", 
+                    marginRight: "20px", 
+                    opacity: canGoBack ? "1" : "0.5", 
+                    marginBottom: "5px",
+                    cursor: canGoBack ? "pointer" : "default",
+                    transition: "opacity 0.2s ease"
+                  }}
+                ></FaChevronLeft>
                 <FaChevronRight style={{color: "white", height: "auto", width: "15px", marginLeft: "20px", opacity: "0.5", marginBottom: "5px"}}></FaChevronRight>
-                <h1 style={{marginLeft: "25px"}}> Projects </h1>
+                <h1 style={{marginLeft: "25px"}}> {currentFolderName} </h1>
                 </div>
                 <div className="top-bar-icons">
                 <img src="./Pictures/FinderTopBar.png" alt="Finder Top Bar"></img>

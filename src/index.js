@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import LandingPage from './LandingPage.js';
 import reportWebVitals from './reportWebVitals';
+import Footer from './Components/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <LandingPage />
+    <Footer />
   </React.StrictMode>
 );
 
