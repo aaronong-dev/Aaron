@@ -222,8 +222,11 @@ function LandingPage() {
             <p>September 2025</p>
             <a href="https://www.jkmedicalclinic.com/" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
           </div>
-          <div className="portfolio-item">
+          <div className="portfolio-item development">
             <img src="/Pictures/GracePointPage.png" alt="Grace Point Website" />
+            <div className="development-overlay">
+              <div className="development-text">Currently In Development</div>
+            </div>
             <h3>GracePoint Urgent Care</h3>
             <p>October 2025</p>
             <a href="https://your-gracepoint-url.com" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>

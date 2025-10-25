@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 function EmailModal({ isOpen, onClose }) {
   // EmailJS Configuration - Replace these with your actual IDs
   const EMAILJS_SERVICE_ID = 'service_qd48frs'; // Replace with your EmailJS service ID
-  const EMAILJS_TEMPLATE_ID = 'template_i413uoq'; // Replace with your EmailJS template ID
+  const EMAILJS_TEMPLATE_ID = 'template_leg7f0e'; // Replace with your EmailJS template ID
   const EMAILJS_PUBLIC_KEY = 'Ihq4t0WiVdFD_YJjD'; // Replace with your EmailJS public key
 
   const [formData, setFormData] = useState({
