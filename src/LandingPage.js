@@ -25,7 +25,9 @@ const projectsData = {
         description: "A bowling tournament management platform for tournament directors to manage their tournaments.",
         children: [
           {id: "LaneManager.Pro", type: "file", image: "/Pictures/LMPro.png", href: "https://lanemanager.pro", description: "Link to my personal project"},
-          {id: "Videos-Of-Me-Bowling", type: "folder", image: "/Icons/folder-icon-macos.webp", description: "I started bowling when I was 10 years old. At around 15-16 years old, I started playing competitively.", children: []},
+          {id: "Videos-Of-Me-Bowling", type: "folder", image: "/Icons/folder-icon-macos.webp", description: "I started bowling when I was 10 years old. At around 15-16 years old, I started playing competitively.", children: [
+            {id: "Bowling1.mov", type: "file", image: "/Videos/Bowling1.mov", description: "Here's a video of me practicing.", href: "/Videos/Bowling1.mov", isVideo: true},
+          ]},
           {id: "package.json", type: "file", image: "/Icons/folder-icon-macos.webp"},
           {id: "config.js", type: "file", image: "/Icons/folder-icon-macos.webp"},
         ]
@@ -76,6 +78,7 @@ function LandingPage() {
   const [currentPath, setCurrentPath] = useState([]);
   const [clickTimeout, setClickTimeout] = useState(null);
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   // Get current folder contents based on path
   const getCurrentFolderContents = useCallback(() => {
@@ -107,7 +110,13 @@ function LandingPage() {
   };
 
   const handleItemClick = (item) => {
-    // If it's a file with href, open it immediately on single click
+    // Check if it's a video file
+    if (item.type === "file" && item.isVideo) {
+      setSelectedVideo(item);
+      return;
+    }
+    
+    // If it's a file with href (but not video), open it immediately on single click
     if (item.type === "file" && item.href) {
       window.open(item.href, '_blank', 'noopener,noreferrer');
       return;
@@ -155,6 +164,10 @@ function LandingPage() {
 
   const closeEmailModal = () => {
     setIsEmailModalOpen(false);
+  };
+
+  const closeVideoModal = () => {
+    setSelectedVideo(null);
   };
 
   return (
@@ -272,7 +285,17 @@ function LandingPage() {
                 key={index}
                 onClick={() => handleItemClick(item)}
               >
-                <img src={item.image} alt={item.id} />
+                {item.isVideo ? (
+                  <video 
+                    src={item.image} 
+                    alt={item.id}
+                    style={{ width: '100%', height: '60px', objectFit: 'cover', objectPosition: 'center' }}
+                    muted
+                    preload="metadata"
+                  />
+                ) : (
+                  <img src={item.image} alt={item.id} />
+                )}
                 <span>{item.id}</span>
               </div>
             ))}
@@ -286,12 +309,32 @@ function LandingPage() {
                 className="folder-modal-content"
                 onClick={(e) => e.stopPropagation()}
               >
-                <img src={selectedFolder.image} alt={selectedFolder.id} />
+                {selectedFolder.isVideo ? (
+                  <video 
+                    src={selectedFolder.image} 
+                    alt={selectedFolder.id}
+                    style={{ width: '300px', height: '200px', objectFit: 'cover', objectPosition: 'center', marginBottom: '20px', filter: 'drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3))' }}
+                    muted
+                    preload="metadata"
+                  />
+                ) : (
+                  <img src={selectedFolder.image} alt={selectedFolder.id} />
+                )}
                 <span>{selectedFolder.id}</span>
               </div>
               <div className="folder-modal-information">
                 <div className="folder-modal-information-header">
-                <img src={selectedFolder.image} alt={selectedFolder.id} />
+                {selectedFolder.isVideo ? (
+                  <video 
+                    src={selectedFolder.image} 
+                    alt={selectedFolder.id}
+                    style={{ width: '90px', height: '60px', objectFit: 'cover', objectPosition: 'center', marginBottom: '10px' }}
+                    muted
+                    preload="metadata"
+                  />
+                ) : (
+                  <img src={selectedFolder.image} alt={selectedFolder.id} />
+                )}
                 <h1 style={{marginBottom: "10px"}}>{selectedFolder.id}</h1>
                 </div>
              
@@ -312,6 +355,27 @@ function LandingPage() {
         isOpen={isEmailModalOpen} 
         onClose={closeEmailModal} 
       />
+
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div className="video-modal-overlay" onClick={closeVideoModal}>
+          <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="video-close-button" onClick={closeVideoModal}>×</button>
+            <video 
+              controls 
+              autoPlay 
+              style={{ width: '100%', height: 'auto', maxHeight: '80vh' }}
+            >
+              <source src={selectedVideo.href} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="video-modal-info">
+              <h3>{selectedVideo.id}</h3>
+              <p>{selectedVideo.description}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

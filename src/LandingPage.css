@@ -454,3 +454,66 @@
     padding-left: 710px;
     color: white;
 }
+
+/* Video Modal Styles */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.video-modal-content {
+  background: #1a1a1a;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  cursor: default;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.video-close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 5px;
+  line-height: 1;
+}
+
+.video-close-button:hover {
+  color: #ccc;
+}
+
+.video-modal-info {
+  margin-top: 15px;
+  color: white;
+  text-align: center;
+}
+
+.video-modal-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.video-modal-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.4;
+}
