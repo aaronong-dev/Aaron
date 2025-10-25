@@ -4,11 +4,13 @@ import './index.css';
 import LandingPage from './LandingPage.js';
 import reportWebVitals from './reportWebVitals';
 import Footer from './Components/Footer';
+import Progression from './Components/Progression';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <LandingPage />
+    <Progression />
     <Footer />
   </React.StrictMode>
 );

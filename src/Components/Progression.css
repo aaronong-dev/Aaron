@@ -1,0 +1,34 @@
+.progression{
+    margin: auto;
+    max-width: 1100px;
+    min-height: 80vh;
+    padding-top: 50px;
+}
+
+.progression-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.progression h1{
+    margin: 0;
+    font-size: 3rem;
+    color: white;
+    text-align: left;
+}
+
+.header-line{
+    border: none;
+    border-top: 1px solid rgb(187, 187, 187);
+    width: 300px;
+    margin-left: 2rem;
+    margin-top: 22px;
+}
+
+.progression-content {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}

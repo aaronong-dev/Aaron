@@ -251,7 +251,7 @@
 /* Projects Content CSS */
 .projects-content {
   position: relative;
-  height: 750px; /* Account for FinderShape height + margin */
+  height: 630px; /* Account for FinderShape height + margin */
 }
 
 /* Finder Scroll CSS */
@@ -335,7 +335,7 @@
   align-items: center;
   border-radius: 20px;
   cursor: default;
-  z-index: 1001;
+  z-index: 1;
   pointer-events: auto;
 }
 

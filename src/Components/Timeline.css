@@ -1,0 +1,235 @@
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 7px;
+  background: white;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgb(51, 159, 216);
+  border: 3px solid #1a1a1a;
+  z-index: 2;
+  box-shadow: 0 0 0 4px rgba(51, 159, 216, 0.2);
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 40%;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  margin: 0 -3%;
+}
+
+.timeline-content:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(51, 159, 216, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-year {
+  color: rgb(51, 159, 216);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timeline-title {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 0.8rem 0;
+  line-height: 1.3;
+}
+
+.timeline-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Type-specific styling */
+.timeline-item.education .timeline-dot {
+  background: white;
+  box-shadow: none;
+  border-radius: 5px;
+  border: none;
+  width: 150px;
+  height: 60px;
+  left: calc(50% - 60px);
+}
+
+.timeline-item.education .timeline-dot img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  border-radius: 0;
+  margin: 5%;
+}
+
+.timeline-item.graduation .timeline-dot {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 50%;
+  border: none;
+  width: 200px;
+  height: 90px;
+  left: calc(63% - 30px);
+}
+
+.timeline-item.graduation .timeline-dot img {
+  width: 70%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 5%;
+  margin: 0;
+}
+
+.timeline-item.project .timeline-dot {
+  background: #FF9800;
+  box-shadow: 0 0 0 4px rgba(255, 152, 0, 0.2);
+}
+
+.timeline-item.learning .timeline-dot {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 10px;
+  border: none;
+  width: 180px;
+  height: 80px;
+  left: calc(50% - 55px);
+}
+
+.timeline-item.learning .timeline-dot img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 5%;
+}
+
+.timeline-item.professional .timeline-dot {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 10px;
+  border: none;
+  width: 200px;
+  height: 100px;
+  left: calc(50% + 60px);
+}
+
+.timeline-item.professional .timeline-dot:has(img[alt="GracePoint Website"]) {
+  left: calc(50% - 65px);
+  height: 80%
+}
+
+.timeline-item.professional .timeline-dot:has(img[alt="Hacienda Del Sol Resort"]) {
+  width: 250px;
+  height: 120px;
+  left: calc(50% + 80px);
+}
+
+.timeline-item.professional .timeline-dot img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 5%;
+}
+
+.timeline-item.milestone .timeline-dot {
+  background: #F44336;
+  box-shadow: 0 0 0 4px rgba(244, 67, 54, 0.2);
+  width: 20px;
+  height: 20px;
+}
+
+.timeline-item.milestone .timeline-dot::after {
+  content: '★';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .timeline-container {
+    padding: 1rem;
+  }
+  
+  .timeline-line {
+    left: 30px;
+  }
+  
+  .timeline-item {
+    flex-direction: row !important;
+    padding-left: 60px;
+  }
+  
+  .timeline-dot {
+    left: 30px;
+  }
+  
+  .timeline-content {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-content {
+    padding: 1rem;
+  }
+  
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.9rem;
+  }
+}
