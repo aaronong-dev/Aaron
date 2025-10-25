@@ -24,7 +24,7 @@ const projectsData = {
         image: "/Icons/folder-icon-macos.webp",
         description: "A bowling tournament management platform for tournament directors to manage their tournaments.",
         children: [
-          {id: "LaneManager.Pro", type: "file", image: "/Icons/folder-icon-macos.webp"},
+          {id: "LaneManager.Pro", type: "file", image: "/Pictures/LMPro.png", href: "https://lanemanager.pro"},
           {id: "Videos-Of-Me-Bowling", type: "folder", image: "/Icons/folder-icon-macos.webp", description: "I started bowling when I was 10 years old. At around 15-16 years old, I started playing competitively.", children: []},
           {id: "package.json", type: "file", image: "/Icons/folder-icon-macos.webp"},
           {id: "config.js", type: "file", image: "/Icons/folder-icon-macos.webp"},
@@ -34,7 +34,7 @@ const projectsData = {
         id: "Project 2",
         type: "folder",
         image: "/Icons/folder-icon-macos.webp",
-        description: "Full-stack e-commerce application with React and Node.js",
+        description: "Project 2 Description",
         children: [
           {id: "frontend", type: "folder", image: "/Icons/folder-icon-macos.webp", children: []},
           {id: "backend", type: "folder", image: "/Icons/folder-icon-macos.webp", children: []},
@@ -46,7 +46,7 @@ const projectsData = {
         id: "Project 3",
         type: "folder",
         image: "/Icons/folder-icon-macos.webp",
-        description: "Personal portfolio website built with React",
+        description: "Project 3 Description",
         children: [
           {id: "index.html", type: "file", image: "/Icons/folder-icon-macos.webp"},
           {id: "styles.css", type: "file", image: "/Icons/folder-icon-macos.webp"},
@@ -58,7 +58,7 @@ const projectsData = {
         id: "Project 4",
         type: "folder",
         image: "/Icons/folder-icon-macos.webp",
-        description: "2D mobile game developed with Unity",
+        description: "Project 4 Description",
         children: [
           {id: "Assets", type: "folder", image: "/Icons/folder-icon-macos.webp", children: []},
           {id: "Scripts", type: "folder", image: "/Icons/folder-icon-macos.webp", children: []},
@@ -101,10 +101,18 @@ function LandingPage() {
     if (item.type === "folder") {
       setCurrentPath([...currentPath, item.id]);
       setSelectedFolder(null);
+    } else if (item.type === "file" && item.href) {
+      window.open(item.href, '_blank', 'noopener,noreferrer');
     }
   };
 
   const handleItemClick = (item) => {
+    // If it's a file with href, open it immediately on single click
+    if (item.type === "file" && item.href) {
+      window.open(item.href, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    
     // Clear existing timeout if any
     if (clickTimeout) {
       clearTimeout(clickTimeout);
