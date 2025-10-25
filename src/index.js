@@ -5,6 +5,7 @@ import LandingPage from './LandingPage.js';
 import reportWebVitals from './reportWebVitals';
 import Footer from './Components/Footer';
 import Progression from './Components/Progression';
+import { Analytics } from '@vercel/analytics/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <LandingPage />
     <Progression />
     <Footer />
+    <Analytics />
   </React.StrictMode>
 );
 
