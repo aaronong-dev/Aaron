@@ -6,7 +6,7 @@ import { MdMail } from 'react-icons/md';
 import { SiLeetcode } from 'react-icons/si';
 
 
-function Navbar(){
+function Navbar({ onEmailClick }){
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -28,6 +28,12 @@ function Navbar(){
         }
     };
 
+    const handleEmailClick = () => {
+        if (onEmailClick) {
+            onEmailClick();
+        }
+    };
+
     return(
         <nav className="navbar">
             <div className="nav-title"> Aaron Ong </div>
@@ -39,7 +45,7 @@ function Navbar(){
                 <li onClick={() => scrollToSection('progression')}>Progression</li>
             </ul>
             <ul className="social-links">
-                <li>
+                <li onClick={handleEmailClick} style={{cursor: "pointer"}}>
                     <MdMail style={{color: "white"}}/>
                 </li>
                 <li>

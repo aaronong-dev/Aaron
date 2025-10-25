@@ -3,10 +3,12 @@ import Navbar from './Components/Navbar';
 import './LandingPage.css';
 import Typewriter from "typewriter-effect";
 import { FaArrowDown } from 'react-icons/fa';
+import { MdMail } from 'react-icons/md';
 import FinderShape from './Components/FinderShape';
 import './Components/FinderShape.css';
 import { useRef, useState, useEffect, useCallback } from "react";
 import CustomScrollbar from "./Components/CustomScrollbar";
+import EmailModal from './Components/EmailModal';
 
 
 
@@ -73,6 +75,7 @@ function LandingPage() {
   const [selectedFolder, setSelectedFolder] = useState(null);
   const [currentPath, setCurrentPath] = useState([]);
   const [clickTimeout, setClickTimeout] = useState(null);
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
 
   // Get current folder contents based on path
   const getCurrentFolderContents = useCallback(() => {
@@ -138,9 +141,17 @@ function LandingPage() {
     }
   }, [currentPath, getCurrentFolderContents]);
 
+  const openEmailModal = () => {
+    setIsEmailModalOpen(true);
+  };
+
+  const closeEmailModal = () => {
+    setIsEmailModalOpen(false);
+  };
+
   return (
     <div>
-      <Navbar />
+      <Navbar onEmailClick={openEmailModal} />
       <section id="home" className="hero">
         <div className="hero-text">
           <h1>
@@ -171,8 +182,12 @@ function LandingPage() {
         </div>
             <p> A recent Computer Science graduate from The University of Texas at Rio Grande Valley. 
               Through building websites for local clinics and businesses, 
-              I’ve been able to merge my technical expertise with my commitment to helping others. 
+              I've been able to merge my technical expertise with my commitment to helping others. 
           </p>
+          <button className="say-hi-button" onClick={openEmailModal}>
+            <MdMail className="email-icon" />
+            Say Hi!
+          </button>
           <FaArrowDown className="arrow-icon"></FaArrowDown>
       </section>
       <section id="about" className="about">
@@ -280,6 +295,12 @@ function LandingPage() {
         </div>
 
       </section>
+      
+      {/* Email Modal */}
+      <EmailModal 
+        isOpen={isEmailModalOpen} 
+        onClose={closeEmailModal} 
+      />
     </div>
   );
 }

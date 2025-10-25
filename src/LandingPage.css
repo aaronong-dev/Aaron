@@ -29,6 +29,34 @@
   animation: none;
 }
 
+.say-hi-button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 20px 0;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.say-hi-button:hover {
+    background: white;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.email-icon {
+    font-size: 20px;
+}
+
 .arrow-icon{
     color: white;
     font-size: 30px;
