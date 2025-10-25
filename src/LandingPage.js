@@ -24,7 +24,7 @@ const projectsData = {
         image: "/Icons/folder-icon-macos.webp",
         description: "A bowling tournament management platform for tournament directors to manage their tournaments.",
         children: [
-          {id: "LaneManager.Pro", type: "file", image: "/Pictures/LMPro.png", href: "https://lanemanager.pro"},
+          {id: "LaneManager.Pro", type: "file", image: "/Pictures/LMPro.png", href: "https://lanemanager.pro", description: "Link to my personal project"},
           {id: "Videos-Of-Me-Bowling", type: "folder", image: "/Icons/folder-icon-macos.webp", description: "I started bowling when I was 10 years old. At around 15-16 years old, I started playing competitively.", children: []},
           {id: "package.json", type: "file", image: "/Icons/folder-icon-macos.webp"},
           {id: "config.js", type: "file", image: "/Icons/folder-icon-macos.webp"},
