@@ -6,15 +6,36 @@ import { MdMail } from 'react-icons/md';
 
 
 function Navbar(){
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            if (sectionId === 'about') {
+                // Scroll slightly higher for about section
+                const elementPosition = element.offsetTop;
+                const offsetPosition = elementPosition - 50; // 50px higher
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            } else {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+    };
+
     return(
         <nav className="navbar">
             <div className="nav-title"> Aaron Ong </div>
             <ul className="nav-links">
-                <li>Home</li>
-                <li>About</li>
-                <li>Portfolio</li>
-                <li>Projects</li>
-                <li>Progression</li>
+                <li onClick={() => scrollToSection('home')}>Home</li>
+                <li onClick={() => scrollToSection('about')}>About</li>
+                <li onClick={() => scrollToSection('portfolio')}>Portfolio</li>
+                <li onClick={() => scrollToSection('projects')}>Projects</li>
+                <li onClick={() => scrollToSection('progression')}>Progression</li>
             </ul>
             <ul className="social-links">
                 <li>

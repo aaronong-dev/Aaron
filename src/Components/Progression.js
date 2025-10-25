@@ -5,7 +5,7 @@ import StickyNavbar from './StickyNavbar';
 
 const Progression = () => {
     return (
-        <div className="progression">
+        <div id="progression" className="progression">
             <div className="progression-header">
                 <h1>/ progression</h1>
                 <div className="header-line"></div>

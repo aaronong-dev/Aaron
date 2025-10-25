@@ -30,6 +30,15 @@
     gap: 20px;
 }
 
+.nav-links li {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-links li:hover {
+    color: #64b5f6;
+}
+
 .nav-title{
     font-size: 20px;
     font-weight: 700;

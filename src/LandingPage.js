@@ -141,7 +141,7 @@ function LandingPage() {
   return (
     <div>
       <Navbar />
-      <section className="hero">
+      <section id="home" className="hero">
         <div className="hero-text">
           <h1>
             <Typewriter
@@ -175,7 +175,7 @@ function LandingPage() {
           </p>
           <FaArrowDown className="arrow-icon"></FaArrowDown>
       </section>
-      <section className="about">
+      <section id="about" className="about">
           <div className="about-header">
             <h1> / about-me </h1>
             <div className="header-line"></div>
@@ -195,7 +195,7 @@ function LandingPage() {
             <img src="/Pictures/AboutPicture.jpg" alt="Handome Young Man"></img></div>
         </div>
       </section>
-      <section className="portfolio">
+      <section id="portfolio" className="portfolio">
         <div className="portfolio-header">
            <h1>/ portfolio</h1>
            <div className="header-line"></div>
@@ -228,7 +228,7 @@ function LandingPage() {
           </div>
         </div>
       </section>
-      <section className="projects">
+      <section id="projects" className="projects">
         <div className="projects-header">
             <h1>/ projects</h1>
             <div className="header-line"></div>
