@@ -5,21 +5,14 @@ import Typewriter from "typewriter-effect";
 import { FaArrowDown } from 'react-icons/fa';
 import FinderShape from './Components/FinderShape';
 import './Components/FinderShape.css';
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import CustomScrollbar from "./Components/CustomScrollbar";
 
 
 
 
-function LandingPage() {
-
-  const scrollRef = useRef(null);
-  const [selectedFolder, setSelectedFolder] = useState(null);
-  const [currentPath, setCurrentPath] = useState([]);
-  const [clickTimeout, setClickTimeout] = useState(null);
-
-  // Folder structure with nested contents
-  const projectsData = {
+// Folder structure with nested contents
+const projectsData = {
     id: "Projects",
     type: "folder",
     children: [
@@ -72,17 +65,24 @@ function LandingPage() {
         ]
       },
     ]
-  };
+};
+
+function LandingPage() {
+
+  const scrollRef = useRef(null);
+  const [selectedFolder, setSelectedFolder] = useState(null);
+  const [currentPath, setCurrentPath] = useState([]);
+  const [clickTimeout, setClickTimeout] = useState(null);
 
   // Get current folder contents based on path
-  const getCurrentFolderContents = () => {
+  const getCurrentFolderContents = useCallback(() => {
     let current = projectsData;
     for (let folderName of currentPath) {
       current = current.children.find(item => item.id === folderName);
       if (!current) return [];
     }
     return current.children || [];
-  };
+  }, [currentPath]);
 
   // Get current folder name
   const getCurrentFolderName = () => {
@@ -129,6 +129,14 @@ function LandingPage() {
       setSelectedFolder(null);
     }
   };
+
+  // Automatically select the first folder when content changes
+  useEffect(() => {
+    const contents = getCurrentFolderContents();
+    if (contents.length > 0) {
+      setSelectedFolder(contents[0]);
+    }
+  }, [currentPath, getCurrentFolderContents]);
 
   return (
     <div>
