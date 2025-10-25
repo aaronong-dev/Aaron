@@ -18,7 +18,7 @@ const Timeline = () => {
     {
       year: "June 2025",
       title: "Odin Project/React Learning",
-      description: "Dove deep into React.js and modern web development practices. Started the Odin Project web development curriculum and built LaneManager.Pro",
+      description: "Introduced to HTML, CSS, and JavaScript through The Odin Project, which sparked a deeper dive into React.js and modern web development practices. Applied these skills to build LaneManager.Pro.",
       type: "learning"
     },
     {

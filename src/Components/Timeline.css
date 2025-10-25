@@ -124,6 +124,8 @@
   object-position: center 30%;
   border-radius: 5%;
   margin: 0;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .timeline-item.project .timeline-dot {
@@ -147,6 +149,8 @@
   object-fit: cover;
   border-radius: 12px;
   margin: 5%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .timeline-item.professional .timeline-dot {
@@ -176,6 +180,8 @@
   object-fit: cover;
   border-radius: 12px;
   margin: 5%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .timeline-item.milestone .timeline-dot {
