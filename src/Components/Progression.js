@@ -1,6 +1,7 @@
 import React from 'react';
 import './Progression.css';
 import Timeline from './Timeline';
+import StickyNavbar from './StickyNavbar';
 
 const Progression = () => {
     return (
@@ -11,6 +12,7 @@ const Progression = () => {
             </div>
             <div className="progression-content">
                 <Timeline />
+                <StickyNavbar />
             </div>
         </div>
     );

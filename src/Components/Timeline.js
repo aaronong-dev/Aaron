@@ -35,7 +35,7 @@ const Timeline = () => {
       },
       {
         year: "October 2025 - Present",
-        title: "Hacienda Del Sol Resort",
+        title: "Hacienda Del Sol Resort - Brownsville, TX",
         description: "Oversee marketing initiatives, manage the resort’s website, and create visual assets for branding and promotions.",
         type: "professional"
       },
@@ -62,7 +62,7 @@ const Timeline = () => {
             {item.type === 'professional' && item.title === 'Second Client Website' && (
               <img src="/Pictures/GracePointPage.png" alt="GracePoint Website" />
             )}
-            {item.type === 'professional' && item.title === 'Hacienda Del Sol Resort' && (
+            {item.type === 'professional' && item.title === 'Hacienda Del Sol Resort - Brownsville, TX' && (
               <img src="/Pictures/HaciendaDelSol.jpg" alt="Hacienda Del Sol Resort" />
             )}
           </div>

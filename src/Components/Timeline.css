@@ -10,7 +10,7 @@
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 7px;
+  width: 3px;
   background: white;
   transform: translateX(-50%);
 }

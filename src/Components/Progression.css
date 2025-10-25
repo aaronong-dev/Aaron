@@ -1,7 +1,7 @@
 .progression{
     margin: auto;
     max-width: 1100px;
-    min-height: 80vh;
+    min-height: 150vh; /* Increased height to ensure sticky behavior works */
     padding-top: 50px;
 }
 
@@ -29,6 +29,9 @@
 .progression-content {
     padding-top: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
 }

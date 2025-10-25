@@ -1,0 +1,20 @@
+.sticky-navbar {
+    position: sticky;
+    bottom: 0;
+    height: 50vh;
+    background-color: rgb(23, 42, 69);
+    z-index: 1000;
+    pointer-events: none;
+    width: 100%;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+    margin-top: 4vh; /* Negative margin to prevent pushing content down */
+}
+
+.sticky-navbar.revealed {
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+}

@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     font-size: 13px;
-    transform: translateY(-30px);
+    padding: 40px;
     gap: -10px;
     line-height: 0;
 }
