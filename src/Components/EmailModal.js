@@ -37,8 +37,8 @@ function EmailModal({ isOpen, onClose }) {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          user_name: formData.name,
-          user_email: formData.email,
+          from_name: formData.name,
+          from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
