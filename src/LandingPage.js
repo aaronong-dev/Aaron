@@ -242,7 +242,7 @@ function LandingPage() {
               <span>?</span>
               </div>
             <h3>Maybe yours?</h3>
-            <a href="mailto:your-email@example.com" className="view-site-link">Contact Me</a>
+            <button onClick={openEmailModal} className="view-site-link contact-me-button">Contact Me</button>
           </div>
         </div>
       </section>
