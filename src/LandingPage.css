@@ -608,6 +608,7 @@
     width: 80px;
     margin-left: 0.5rem;
     margin-bottom: 40px;
+    display: none;
   }
 
   .about-content {
@@ -681,6 +682,7 @@
     width: 120px;
     margin-left: 1rem;
     margin-bottom: 0;
+    display: none;
   }
 
   .portfolio-content {

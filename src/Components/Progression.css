@@ -70,6 +70,7 @@
         width: 100px;
         margin-left: 1rem;
         margin-bottom: 0;
+        display: none;
     }
 
     .progression-content {
@@ -99,6 +100,7 @@
     .progression .header-line {
         width: 80px;
         margin-left: 1rem;
+        display: none;
     }
 
     .progression-content {
