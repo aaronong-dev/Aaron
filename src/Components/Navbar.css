@@ -1,14 +1,17 @@
 .navbar{
     display: flex;
     color: rgb(234, 234, 234);
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    padding-left: 180px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
     position: sticky;
     top: 0;
     overflow: hidden;
     background-color: rgb(23, 42, 69);
     z-index: 1001;
+    width: 100%;
 }
 
 .nav-links, .social-links{
@@ -20,9 +23,6 @@
 
 
 .social-links{
-    justify-content:right;
-    margin-left: auto;
-    margin-right: 20px;
     gap: 15px;
 }
 
@@ -48,9 +48,7 @@
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
   .navbar {
-    padding-left: 20px;
-    padding-right: 20px;
-    justify-content: space-between;
+    padding: 0 15px;
   }
 
   .nav-links {
@@ -58,8 +56,6 @@
   }
 
   .social-links {
-    margin-left: 0;
-    margin-right: 0;
     gap: 20px;
   }
 

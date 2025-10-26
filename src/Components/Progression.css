@@ -35,3 +35,38 @@
     min-height: 100vh;
     position: relative;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .progression {
+        margin: auto;
+        max-width: 100%;
+        min-height: 100vh;
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .progression h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .progression .header-line {
+        width: 100px;
+        margin-left: 0.5rem;
+        margin-bottom: 30px;
+    }
+
+    .progression-content {
+        padding-top: 0;
+        min-height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
