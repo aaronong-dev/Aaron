@@ -35,7 +35,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-90%, -50%);
+  transform: translate(-50%, -50%);
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -50,7 +50,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 1.5rem;
-  width: 35%;
+  width: 45%;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   position: relative;
@@ -217,52 +217,71 @@
     align-items: center;
   }
   
+  /* Ensure all timeline items use the same layout on mobile */
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    flex-direction: row !important;
+  }
+  
   .timeline-dot {
-    left: 30px !important;
+    left: 50px !important;
     transform: translate(-50%, -50%) !important;
   }
   
   /* Override specific positioning for all timeline dot types on mobile */
   .timeline-item.education .timeline-dot {
-    left: 30px !important;
+    left: 50px !important;
     transform: translate(-50%, -50%) !important;
     width: 80px;
     height: 80px;
   }
   
   .timeline-item.graduation .timeline-dot {
-    left: 30px !important;
+    left: 90px !important;
     transform: translate(-50%, -50%) !important;
     width: 80px;
     height: 80px;
   }
   
   .timeline-item.learning .timeline-dot {
-    left: 30px !important;
+    left: 50px !important;
     transform: translate(-50%, -50%) !important;
     width: 80px;
     height: 80px;
   }
   
   .timeline-item.professional .timeline-dot {
-    left: 30px !important;
+    left: 50px !important;
     transform: translate(-50%, -50%) !important;
     width: 80px;
     height: 80px;
   }
   
   .timeline-item.professional .timeline-dot:has(img[alt="GracePoint Website"]) {
-    left: 30px !important;
+    left: 50px !important;
     transform: translate(-50%, -50%) !important;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
   }
   
   .timeline-item.professional .timeline-dot:has(img[alt="Hacienda Del Sol Resort"]) {
-    left: 30px !important;
+    left: 50px !important;
     transform: translate(-50%, -50%) !important;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  /* Move specific timeline images more to the right on mobile */
+  .timeline-item.graduation .timeline-dot {
+    left: 90px !important;
+  }
+  
+  .timeline-item.professional .timeline-dot:has(img[alt="GracePoint Website"]) {
+    left: 60px !important;
+  }
+  
+  .timeline-item.professional .timeline-dot:has(img[alt="Hacienda Del Sol Resort"]) {
+    left: 60px !important;
   }
   
   .timeline-content {
@@ -287,7 +306,7 @@
   }
   
   .timeline-dot {
-    left: 25px !important;
+    left: 45px !important;
     transform: translate(-50%, -50%) !important;
   }
   
@@ -296,10 +315,27 @@
   .timeline-item.graduation .timeline-dot,
   .timeline-item.learning .timeline-dot,
   .timeline-item.professional .timeline-dot {
-    left: 25px !important;
-    transform: translate(-30%, -50%) !important;
+    left: 5cap !important;
+    transform: translate(-50%, -50%) !important;
     width: 150px;
     height: 70px;
+  }
+  
+  /* Move specific timeline images more to the right on extra small screens */
+  .timeline-item.graduation .timeline-dot {
+    left: 85px !important;
+  }
+  
+  .timeline-item.professional .timeline-dot:has(img[alt="GracePoint Website"]) {
+    left: 55px !important;
+    width: 180px !important;
+    height: 80px !important;
+  }
+  
+  .timeline-item.professional .timeline-dot:has(img[alt="Hacienda Del Sol Resort"]) {
+    left: 55px !important;
+    width: 180px !important;
+    height: 80px !important;
   }
   
   .timeline-content {
