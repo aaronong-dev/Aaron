@@ -9,6 +9,8 @@
 
 .hero-text{
     font-size: 40px;
+    opacity: 0;
+    transform: translateX(-100px);
 }
 
 .hero p{
@@ -18,6 +20,11 @@
     line-height: 1.5;
     max-width: 90%;
     box-sizing: border-box;
+}
+
+.hero-description {
+    opacity: 0;
+    transform: translateY(50px);
 }
 
 .hero h2{
@@ -48,6 +55,11 @@
     gap: 8px;
 }
 
+.hero-button {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
 .say-hi-button:hover {
     background: white;
     color: #1a1a1a;
@@ -65,6 +77,10 @@
     animation: bounce 2s infinite;
 }
 
+.hero-arrow {
+    opacity: 0;
+}
+
 @keyframes bounce{
     0%, 100% {
         transform: translateY(0);
@@ -72,6 +88,143 @@
     50% {
         transform: translateY(15px);
     }
+}
+
+/* Hero Animation Keyframes */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Hero Animation Classes */
+.hero-text.animate-in {
+    animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.hero-description.animate-in {
+    animation: slideInFromBottom 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.hero-button.animate-in {
+    animation: slideInFromBottom 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
+.hero-arrow.animate-in {
+    animation: fadeIn 0.8s ease-out 0.9s forwards;
+    opacity: 0;
+}
+
+/* Section Animation Keyframes */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottomUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* About Section Animations */
+.about-header.animate-in {
+    animation: slideInFromTop 0.8s ease-out forwards;
+}
+
+.about-text.animate-in {
+    animation: slideInFromBottomUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.about-image.animate-in {
+    animation: slideInFromBottomUp 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+/* Portfolio Section Animations */
+.portfolio-header.animate-in {
+    animation: slideInFromTop 0.8s ease-out forwards;
+}
+
+.portfolio-item.animate-in {
+    animation: scaleIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.portfolio-item.animate-in:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-item.animate-in:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-item.animate-in:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-item.animate-in:nth-child(4) { animation-delay: 0.4s; }
+
+/* Projects Section Animations */
+.projects-header.animate-in {
+    animation: slideInFromTop 0.8s ease-out forwards;
+}
+
+.projects-content.animate-in {
+    animation: slideInFromBottomUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
 }
 
 .about {
@@ -86,6 +239,8 @@
     justify-content: flex-start;
     margin-bottom: 1rem;
     width: 100%;
+    opacity: 0;
+    transform: translateY(-50px);
   }
 
 .about h1{
@@ -117,11 +272,18 @@
     display: flex;
     flex: 1;
     flex-direction: column;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 .about-content p{
     flex: 1;
     text-align: justify;
+}
+
+.about-image {
+    opacity: 0;
+    transform: translateY(30px);
 }
 
 .about-image img{
@@ -148,6 +310,8 @@
     margin-bottom: 1rem;
     width: 100%;
     padding-left: 0;
+    opacity: 0;
+    transform: translateY(-50px);
 }
 
 .portfolio h1{
@@ -182,6 +346,8 @@
     color: white;
     max-width: 400px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: scale(0.8);
 }
 
 .portfolio-item:hover {
@@ -305,6 +471,8 @@
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(-50px);
 }
 
 .projects h1{
@@ -332,6 +500,8 @@
 .projects-content {
   position: relative;
   height: 630px; /* Account for FinderShape height + margin */
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 /* Finder Scroll CSS */

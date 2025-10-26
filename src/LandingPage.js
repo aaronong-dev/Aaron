@@ -79,6 +79,10 @@ function LandingPage() {
   const [clickTimeout, setClickTimeout] = useState(null);
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [heroAnimationsStarted, setHeroAnimationsStarted] = useState(false);
+  const [aboutAnimationsStarted, setAboutAnimationsStarted] = useState(false);
+  const [portfolioAnimationsStarted, setPortfolioAnimationsStarted] = useState(false);
+  const [projectsAnimationsStarted, setProjectsAnimationsStarted] = useState(false);
 
   // Get current folder contents based on path
   const getCurrentFolderContents = useCallback(() => {
@@ -158,6 +162,59 @@ function LandingPage() {
     }
   }, [currentPath, getCurrentFolderContents]);
 
+  // Trigger hero animations on component mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setHeroAnimationsStarted(true);
+    }, 100); // Small delay to ensure DOM is ready
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Intersection Observer for section animations
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          switch (sectionId) {
+            case 'about':
+              setAboutAnimationsStarted(true);
+              break;
+            case 'portfolio':
+              setPortfolioAnimationsStarted(true);
+              break;
+            case 'projects':
+              setProjectsAnimationsStarted(true);
+              break;
+            default:
+              break;
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    const aboutSection = document.getElementById('about');
+    const portfolioSection = document.getElementById('portfolio');
+    const projectsSection = document.getElementById('projects');
+
+    if (aboutSection) observer.observe(aboutSection);
+    if (portfolioSection) observer.observe(portfolioSection);
+    if (projectsSection) observer.observe(projectsSection);
+
+    return () => {
+      if (aboutSection) observer.unobserve(aboutSection);
+      if (portfolioSection) observer.unobserve(portfolioSection);
+      if (projectsSection) observer.unobserve(projectsSection);
+    };
+  }, []);
+
   const openEmailModal = () => {
     setIsEmailModalOpen(true);
   };
@@ -174,7 +231,7 @@ function LandingPage() {
     <div>
       <Navbar onEmailClick={openEmailModal} />
       <section id="home" className="hero">
-        <div className="hero-text">
+        <div className={`hero-text ${heroAnimationsStarted ? 'animate-in' : ''}`}>
           <h1>
             <Typewriter
               onInit={(typewriter) => {
@@ -201,49 +258,49 @@ function LandingPage() {
             />
           </h1>
         </div>
-            <p> A recent Computer Science graduate from The University of Texas at Rio Grande Valley. 
+            <p className={`hero-description ${heroAnimationsStarted ? 'animate-in' : ''}`}> A recent Computer Science graduate from The University of Texas at Rio Grande Valley. 
               Through building websites for local clinics and businesses, 
               I've been able to merge my technical expertise with my commitment to helping others. 
           </p>
-          <button className="say-hi-button" onClick={openEmailModal}>
+          <button className={`say-hi-button hero-button ${heroAnimationsStarted ? 'animate-in' : ''}`} onClick={openEmailModal}>
             <MdMail className="email-icon" />
             Say Hi!
           </button>
-          <FaArrowDown className="arrow-icon"></FaArrowDown>
+          <FaArrowDown className={`arrow-icon hero-arrow ${heroAnimationsStarted ? 'animate-in' : ''}`}></FaArrowDown>
       </section>
       <section id="about" className="about">
-          <div className="about-header">
+          <div className={`about-header ${aboutAnimationsStarted ? 'animate-in' : ''}`}>
             <h1> / about-me </h1>
             <div className="header-line"></div>
           </div>
         <div className="about-content">
-          <div className="about-text">
+          <div className={`about-text ${aboutAnimationsStarted ? 'animate-in' : ''}`}>
           <p> I'm learning as I go, but right now, I'm focused on sharpening my technical skills, grinding leetcode,
             and preparing for software engineering interviews.
             I recently picked up JavaScript, HTML, and CSS, and somehow managed to earn the trust of a 
-            doctor to build their website. Since then, I’ve had more opportunities to build sites for others.
+            doctor to build their website. Since then, I've had more opportunities to build sites for others.
             That's when I realized I really enjoyed solving problems and helping people. The sites can be found below in the portfolio section.
             </p>
 
 
           </div>
-          <div className="about-image">
+          <div className={`about-image ${aboutAnimationsStarted ? 'animate-in' : ''}`}>
             <img src="/Pictures/AboutPicture.jpg" alt="Handome Young Man"></img></div>
         </div>
       </section>
       <section id="portfolio" className="portfolio">
-        <div className="portfolio-header">
+        <div className={`portfolio-header ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
            <h1>/ portfolio</h1>
            <div className="header-line"></div>
         </div>
         <div className="portfolio-content">
-          <div className="portfolio-item">
+          <div className={`portfolio-item ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
             <img src="/Pictures/JKMedicalPage.png" alt="JK Medical Website" />
             <h3>JK Medical Clinic</h3>
             <p>September 2025</p>
             <a href="https://www.jkmedicalclinic.com/" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
           </div>
-          <div className="portfolio-item development">
+          <div className={`portfolio-item development ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
             <img src="/Pictures/GracePointPage.png" alt="Grace Point Website" />
             <div className="development-overlay">
               <div className="development-text">Currently In Development</div>
@@ -252,13 +309,13 @@ function LandingPage() {
             <p>October 2025</p>
             <a href="https://your-gracepoint-url.com" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
           </div>
-          <div className="portfolio-item">
+          <div className={`portfolio-item ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
             <img src="/Pictures/ThePlaySage.png" alt="ThePlaySage Website" />
             <h3>ThePlaySage</h3>
             <p>November 2025</p>
             <a href="https://theplaysage.com" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
           </div>
-           <div className="portfolio-item">
+           <div className={`portfolio-item ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
             <div class="placeholder-box">
               <span>?</span>
               </div>
@@ -268,11 +325,11 @@ function LandingPage() {
         </div>
       </section>
       <section id="projects" className="projects">
-        <div className="projects-header">
+        <div className={`projects-header ${projectsAnimationsStarted ? 'animate-in' : ''}`}>
             <h1>/ projects</h1>
             <div className="header-line"></div>
         </div>
-        <div className="projects-content">
+        <div className={`projects-content ${projectsAnimationsStarted ? 'animate-in' : ''}`}>
           <FinderShape 
             currentFolderName={getCurrentFolderName()} 
             onBackClick={handleBackNavigation}
