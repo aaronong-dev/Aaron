@@ -46,19 +46,30 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .progression-header {
+        display: flex;
+        flex-direction: row;
         align-items: center;
-        text-align: center;
+        justify-content: flex-start;
+        width: 100%;
+        margin-bottom: 2rem;
+        padding-left: 0;
     }
 
     .progression h1 {
         font-size: 1.8rem;
-        margin-bottom: 15px;
+        margin-bottom: 0;
+        text-align: left;
     }
 
     .progression .header-line {
         width: 100px;
-        margin-left: 0.5rem;
-        margin-bottom: 30px;
+        margin-left: 1rem;
+        margin-bottom: 0;
     }
 
     .progression-content {
@@ -68,5 +79,31 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .progression {
+        padding: 15px 10px;
+        align-items: flex-start;
+    }
+
+    .progression h1 {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+    .progression .header-line {
+        width: 80px;
+        margin-left: 1rem;
+    }
+
+    .progression-content {
+        padding: 0 5px;
+        margin: 0 auto;
+        justify-content: center;
     }
 }

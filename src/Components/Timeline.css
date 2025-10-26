@@ -35,7 +35,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-90%, -50%);
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -50,7 +50,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 1.5rem;
-  width: 40%;
+  width: 35%;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   position: relative;
@@ -213,22 +213,99 @@
   
   .timeline-item {
     flex-direction: row !important;
-    padding-left: 60px;
+    padding-left: 80px;
+    align-items: center;
   }
   
   .timeline-dot {
-    left: 30px;
+    left: 30px !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  
+  /* Override specific positioning for all timeline dot types on mobile */
+  .timeline-item.education .timeline-dot {
+    left: 30px !important;
+    transform: translate(-50%, -50%) !important;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .timeline-item.graduation .timeline-dot {
+    left: 30px !important;
+    transform: translate(-50%, -50%) !important;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .timeline-item.learning .timeline-dot {
+    left: 30px !important;
+    transform: translate(-50%, -50%) !important;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .timeline-item.professional .timeline-dot {
+    left: 30px !important;
+    transform: translate(-50%, -50%) !important;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .timeline-item.professional .timeline-dot:has(img[alt="GracePoint Website"]) {
+    left: 30px !important;
+    transform: translate(-50%, -50%) !important;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .timeline-item.professional .timeline-dot:has(img[alt="Hacienda Del Sol Resort"]) {
+    left: 30px !important;
+    transform: translate(-50%, -50%) !important;
+    width: 80px;
+    height: 80px;
   }
   
   .timeline-content {
-    width: 100%;
-    margin-left: 0;
+    width: 55%;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 480px) {
+  .timeline-container {
+    padding: 0.5rem;
+  }
+  
+  .timeline-line {
+    left: 105px;
+
+  }
+  
+  .timeline-item {
+    padding-left: 70px;
+    align-items: center;
+  }
+  
+  .timeline-dot {
+    left: 25px !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  
+  /* Ensure all timeline dots are properly sized and aligned on extra small screens */
+  .timeline-item.education .timeline-dot,
+  .timeline-item.graduation .timeline-dot,
+  .timeline-item.learning .timeline-dot,
+  .timeline-item.professional .timeline-dot {
+    left: 25px !important;
+    transform: translate(-30%, -50%) !important;
+    width: 150px;
+    height: 70px;
+  }
+  
   .timeline-content {
     padding: 1rem;
+    width: 55%;
+    margin: 0 auto;
   }
   
   .timeline-title {

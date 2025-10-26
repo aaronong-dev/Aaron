@@ -7,6 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(23, 42, 69);
   overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 code {

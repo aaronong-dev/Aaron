@@ -12,6 +12,7 @@
     background-color: rgb(23, 42, 69);
     z-index: 1001;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .nav-left {
@@ -55,6 +56,9 @@
 @media (max-width: 768px) {
   .navbar {
     padding: 0 15px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .nav-links {
@@ -62,10 +66,15 @@
   }
 
   .social-links {
-    gap: 20px;
+    gap: 15px;
+    font-size: 18px;
   }
 
   .nav-title {
     font-size: 18px;
+  }
+
+  .nav-left {
+    gap: 15px;
   }
 }

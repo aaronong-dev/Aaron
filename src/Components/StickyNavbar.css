@@ -18,3 +18,30 @@
     opacity: 0;
     visibility: hidden;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .sticky-navbar {
+        width: 100vw !important;
+        left: 0;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .sticky-navbar {
+        width: 100vw !important;
+        left: 0;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        box-sizing: border-box;
+    }
+}
