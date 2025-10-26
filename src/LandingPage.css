@@ -517,3 +517,154 @@
   color: #ccc;
   line-height: 1.4;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-text {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+  }
+
+  .say-hi-button {
+    font-size: 16px;
+    padding: 10px 25px;
+    margin: 20px 0;
+  }
+
+  .arrow-icon {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .about {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .about h1 {
+    font-size: 2rem;
+  }
+
+  .header-line {
+    width: 150px;
+    margin-left: 1rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .about-text {
+    order: 2;
+  }
+
+  .about-image {
+    order: 1;
+    margin-left: 0;
+  }
+
+  .about-image img {
+    width: 250px;
+    margin-left: 0;
+  }
+
+  .about-content p {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .portfolio {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .portfolio h1 {
+    font-size: 2rem;
+  }
+
+  .portfolio-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .portfolio-item {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .placeholder-box {
+    width: 100%;
+    height: 200px;
+  }
+
+  .projects {
+    display: none;
+  }
+
+  .projects-content {
+    height: auto;
+    min-height: 500px;
+  }
+
+  .finder-scroll {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+    margin-top: 20px;
+  }
+
+  .folder-item {
+    min-width: 100px;
+  }
+
+  .folder-item img {
+    width: 80px;
+  }
+
+  .folder-modal-content {
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .folder-modal-content img {
+    width: 200px;
+  }
+
+  .folder-modal-information {
+    margin-top: 50px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .folder-modal-information-header {
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+  }
+
+  .folder-modal-information-content {
+    padding-left: 0;
+    text-align: center;
+  }
+}

@@ -44,3 +44,26 @@
     font-weight: 700;
 
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .social-links {
+    margin-left: 0;
+    margin-right: 0;
+    gap: 20px;
+  }
+
+  .nav-title {
+    font-size: 18px;
+  }
+}
