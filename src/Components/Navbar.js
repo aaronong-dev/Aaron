@@ -36,14 +36,16 @@ function Navbar({ onEmailClick }){
 
     return(
         <nav className="navbar">
-            <div className="nav-title"> Aaron Ong </div>
-            <ul className="nav-links">
-                <li onClick={() => scrollToSection('home')}>Home</li>
-                <li onClick={() => scrollToSection('about')}>About</li>
-                <li onClick={() => scrollToSection('portfolio')}>Portfolio</li>
-                <li onClick={() => scrollToSection('projects')}>Projects</li>
-                <li onClick={() => scrollToSection('progression')}>Progression</li>
-            </ul>
+            <div className="nav-left">
+                <div className="nav-title"> Aaron Ong </div>
+                <ul className="nav-links">
+                    <li onClick={() => scrollToSection('home')}>Home</li>
+                    <li onClick={() => scrollToSection('about')}>About</li>
+                    <li onClick={() => scrollToSection('portfolio')}>Portfolio</li>
+                    <li onClick={() => scrollToSection('projects')}>Projects</li>
+                    <li onClick={() => scrollToSection('progression')}>Progression</li>
+                </ul>
+            </div>
             <ul className="social-links">
                 <li onClick={handleEmailClick} style={{cursor: "pointer"}}>
                     <MdMail style={{color: "white"}}/>
