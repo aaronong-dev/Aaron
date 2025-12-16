@@ -309,9 +309,12 @@ function LandingPage() {
             <p>October 2025</p>
             <a href="https://your-gracepoint-url.com" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
           </div>
-          <div className={`portfolio-item ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
-            <img src="/Pictures/ThePlaySage.png" alt="ThePlaySage Website" />
-            <h3>ThePlaySage</h3>
+          <div className={`portfolio-item development ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
+            <img src="/Pictures/HaciendaResort.png" alt="Hacienda Del Sol Resort Website" />
+            <div className="development-overlay">
+              <div className="development-text">Currently In Development</div>
+            </div>
+            <h3>Hacienda Del Sol Resort</h3>
             <p>November 2025</p>
             <a href="https://theplaysage.com" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
           </div>
