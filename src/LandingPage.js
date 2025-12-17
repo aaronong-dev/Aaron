@@ -282,6 +282,11 @@ function LandingPage() {
             That's when I realized I really enjoyed solving problems and helping people. The sites can be found below in the portfolio section.
             </p>
 
+            <p>
+              I also started running the past year and have really enjoyed it. If it's not on STRAVA, it didn't happen.
+            </p>
+            <iframe title="Strava Activity Feed" height='454' width='300' frameborder='0' allowtransparency='true' scrolling='no' src='https://www.strava.com/athletes/160381045/latest-rides/1da841e597f6645bd361ff35c37cb291ffc44239'></iframe>
+
 
           </div>
           <div className={`about-image ${aboutAnimationsStarted ? 'animate-in' : ''}`}>
