@@ -320,6 +320,12 @@ function LandingPage() {
             <p>November 2025</p>
             <a href="https://haciendadelsolresort.com" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
           </div>
+          <div className={`portfolio-item ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
+            <img src="/Pictures/SouthernCharmSPI.png" alt="Southern Charm SPI Website" />
+            <h3>Southern Charm SPI</h3>
+            <p>January 2026</p>
+            <a href="https://www.southerncharmspi.com" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
+          </div>
            <div className={`portfolio-item ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
             <div class="placeholder-box">
               <span>?</span>
