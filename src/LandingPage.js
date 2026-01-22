@@ -305,15 +305,6 @@ function LandingPage() {
             <p>September 2025</p>
             <a href="https://www.jkmedicalclinic.com/" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
           </div>
-          <div className={`portfolio-item development ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
-            <img src="/Pictures/GracePointPage.png" alt="Grace Point Website" />
-            <div className="development-overlay">
-              <div className="development-text">Currently In Development</div>
-            </div>
-            <h3>GracePoint Urgent Care</h3>
-            <p>October 2025</p>
-            <a href="https://your-gracepoint-url.com" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
-          </div>
           <div className={`portfolio-item ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
             <img src="/Pictures/HaciendaResort.png" alt="Hacienda Del Sol Resort Website" />
             <h3>Hacienda Del Sol Resort</h3>
@@ -325,6 +316,15 @@ function LandingPage() {
             <h3>Southern Charm SPI</h3>
             <p>January 2026</p>
             <a href="https://www.southerncharmspi.com" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
+          </div>
+          <div className={`portfolio-item development ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
+            <img src="/Pictures/GracePointPage.png" alt="Grace Point Website" />
+            <div className="development-overlay">
+              <div className="development-text">Currently In Development</div>
+            </div>
+            <h3>GracePoint Urgent Care</h3>
+            <p>October 2025</p>
+            <a href="https://your-gracepoint-url.com" target="_blank" rel="noopener noreferrer" className="view-site-link">View Site</a>
           </div>
            <div className={`portfolio-item ${portfolioAnimationsStarted ? 'animate-in' : ''}`}>
             <div class="placeholder-box">
